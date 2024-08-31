@@ -1,0 +1,8 @@
+***RECEIPT***
+Account No: 1234
+Name: Jessy
+Balance: 2900
+Transaction History:
+Account created with initial deposit of 900
+Deposited: 2000
+Date: 31/08/2024 16:08:05
