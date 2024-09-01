@@ -135,12 +135,12 @@ public class AccountGUI extends JFrame {
     }
 
     private void showServiceMenu() {
-        String[] options = {"Buy Internet Package", "Pay Supplier", "Buy Units", "Check Rewards", "Cancel"};
+        String[] options = {"Cancel", "Pay Supplier", "Buy Units", "Check Rewards","Buy Internet Package"};
         int choice = JOptionPane.showOptionDialog(this, "Select a service:", "Service Menu",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
         switch (choice) {
             case 0:
-                showBuyPackageDialog();
+
                 break;
             case 1:
                 showPaySupplierDialog();
@@ -153,27 +153,29 @@ public class AccountGUI extends JFrame {
                 JOptionPane.showMessageDialog(this, "Rewards checked.");
                 break;
             case 4:
-                // Cancel
+                showBuyPackageDialog();// Cancel
                 break;
         }
     }
 
     private void showBuyPackageDialog() {
-        String[] packageOptions = {"Social Package (2000f for 1 week)", "Social Package (3500f for 1 month)",
-                "Unlimited Package (5000f for 1 month)", "Unlimited Package (8000f for 3 months)"};
+        String[] packageOptions = {"Cancel","Social Package (2000f/week)","Social Package (3500f/month)",
+                "Unlimited Package (5000f/month)", "Unlimited Package (8000f/months)"};
         int choice = JOptionPane.showOptionDialog(this, "Select a package:", "Buy Internet Package",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, packageOptions, packageOptions[0]);
         switch (choice) {
             case 0:
-                userAccount.buyInternetPackage(2000);
                 break;
             case 1:
-                userAccount.buyInternetPackage(3500);
+                userAccount.buyInternetPackage(2000);
                 break;
             case 2:
-                userAccount.buyInternetPackage(5000);
+                userAccount.buyInternetPackage(3500);
                 break;
             case 3:
+                userAccount.buyInternetPackage(5000);
+                break;
+            case 4:
                 userAccount.buyInternetPackage(8000);
                 break;
         }
